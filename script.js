@@ -1,8 +1,11 @@
-function startGame() {
-  document.body.style.transition = "0.5s";
-  document.body.style.opacity = 0;
+const space = document.querySelector('.space');
+const icons = ['💗','🌸','✨','💖','🌷','💫'];
 
-  setTimeout(() => {
-    alert("💗 Welcome to Moka Love 💗");
-  }, 500);
-}
+for(let i = 0; i < 25; i++){
+  const span = document.createElement('span');
+  span.innerText = icons[Math.floor(Math.random() * icons.length)];
+  span.style.left = Math.random() * 100 + 'vw';
+  span.style.fontSize = 14 + Math.random() * 20 + 'px';
+  span.style.animationDuration = 10 + Math.random() * 15 + 's';
+  space.appendChild(span);
+    }
