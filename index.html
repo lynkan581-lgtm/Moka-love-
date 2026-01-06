@@ -4,49 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moka Love</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<!-- ICON NỀN -->
-<div id="icons"></div>
+<body class="intro-bg">
+
+<!-- ICON BAY NỀN -->
+<div class="space" id="space"></div>
 
 <!-- INTRO -->
-<div id="intro">
-  <h1>Moka Love</h1>
-  <p>Chạm để bắt đầu</p>
-</div>
-
-<!-- BLINK -->
-<div id="blink"></div>
-
-<!-- GAME -->
-<div id="game">
-  <img src="file_000000004a9071fa963afb9a45478acb.png" id="bg">
-
-  <div id="choices">
-    <button data-text="Đây là đâu!?">Đây là đâu!?</button>
-    <button data-text="Sao mình lại ở đây!?">Sao mình lại ở đây!?</button>
+<div class="intro" id="intro">
+  <div class="start-card" id="startCard">
+    <h1>Moka Love</h1>
+    <p class="tap">Chạm để bắt đầu</p>
   </div>
 
-  <div id="chat">
+  <div class="dev-note">dev: rau nói nhiều</div>
+</div>
+
+<!-- SCENE -->
+<div class="scene" id="scene">
+  <img src="file_000000004a9071fa963afb9a45478acb.png" class="bg">
+
+  <div class="choices" id="choices">
+    <button onclick="choose('Đây là đâu!?')">Đây là đâu!?</button>
+    <button onclick="choose('Sao mình lại ở đây!?')">Sao mình lại ở đây!?</button>
+  </div>
+
+  <div class="chat-box">
     <span id="chatText"></span>
   </div>
 </div>
 
 <script src="script.js"></script>
-</body>
-</html>  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-  </html><script src="./script.js"></script>
-</body>
-  </html>    <p id="chatText"></p>
-  </div>
-</div>
-
-<script src="./script.js"></script>
 </body>
   </html>
