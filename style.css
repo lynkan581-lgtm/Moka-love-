@@ -2,46 +2,67 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial Rounded MT Bold', 'Comic Sans MS', sans-serif;
 }
 
 body {
   background: white;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
 }
 
-/* 🌌 NỀN ICON BAY */
+/* 🌌 NỀN ICON TRÔI */
+.space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .space span {
   position: absolute;
-  font-size: 20px;
-  opacity: 0.4;
+  opacity: 0.5;
   animation: float linear infinite;
 }
 
 @keyframes float {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
+  from {
+    transform: translateY(110vh) translateX(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-20vh) translateX(40px);
+    opacity: 0.6;
+  }
 }
 
-/* 🩷 BẢNG START */
+/* 🩷 INTRO CARD */
 .start-card {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffd6ea;
   width: 280px;
   padding: 40px 20px;
+  background: #ffd6ea;
   border-radius: 40px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(255,120,180,0.35);
   animation: cardFloat 2.5s ease-in-out infinite;
+  cursor: pointer;
+  z-index: 10;
 }
 
 @keyframes cardFloat {
-  0%,100% { transform: translate(-50%, -50%) translateY(0); }
-  50% { transform: translate(-50%, -50%) translateY(-10px); }
+  0%,100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
 }
 
 /* TITLE */
@@ -51,10 +72,10 @@ body {
   text-shadow: 0 4px 0 #ffc1dc;
 }
 
-/* TIM */
+/* HEART */
 .heart {
   font-size: 32px;
-  margin: 15px 0;
+  margin: 16px 0;
   animation: heartBeat 1.2s infinite;
 }
 
@@ -65,8 +86,8 @@ body {
 
 /* TAP */
 .tap {
-  color: #ff6fb1;
   font-size: 18px;
+  color: #ff6fb1;
   animation: tapBlink 1s infinite;
 }
 
@@ -80,13 +101,14 @@ body {
 .dev-note {
   position: absolute;
   top: 80px;
-  left: -200px;
+  left: -220px;
   background: #ffe3f1;
   padding: 12px 26px;
   border-radius: 999px;
   font-size: 14px;
   color: #ff5fa2;
   animation: slideIn 1.5s ease forwards, noteFloat 3s ease-in-out infinite;
+  z-index: 5;
 }
 
 @keyframes slideIn {
@@ -96,55 +118,4 @@ body {
 @keyframes noteFloat {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
-  }  background: #ffffff;
-  border-radius: 34px;
-  padding: 70px 20px 80px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-
-  box-shadow:
-    0 20px 40px rgba(255, 140, 190, 0.35);
-  
-  animation: floatBox 3s infinite ease-in-out;
-}
-
-@keyframes floatBox {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* ================= TIÊU ĐỀ ================= */
-.title {
-  font-family: 'Fredoka', cursive;
-  font-size: 52px;
-  color: #ff5fa2;
-
-  text-shadow:
-    0 4px 0 #ffc1dc,
-    0 10px 20px rgba(255,95,162,0.35);
-
-  animation: popIn 1.2s ease;
-}
-
-@keyframes popIn {
-  0% { transform: scale(0.6); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* ================= CHẠM ĐỂ BẮT ĐẦU ================= */
-.tap {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #ff8fbe;
-  letter-spacing: 1px;
-
-  animation: tapPulse 1.4s infinite;
-}
-
-@keyframes tapPulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.08); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
   }
