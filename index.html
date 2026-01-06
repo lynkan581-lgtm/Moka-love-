@@ -7,7 +7,37 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="intro-bg">
+<!-- 📱 PHONE RING -->
+<div class="phone-ring" id="phoneRing">📱</div>
 
+<!-- 📱 PHONE SCREEN -->
+<div class="phone-screen" id="phoneScreen">
+
+  <!-- STEP 1: NAME -->
+  <div class="phone-step active" id="stepName">
+    <p>Nhập tên của bạn</p>
+    <input type="text" id="playerName" placeholder="Tên của bạn...">
+    <button onclick="saveName()">Xác nhận</button>
+  </div>
+
+  <!-- STEP 2: GENDER -->
+  <div class="phone-step" id="stepGender">
+    <p>Bạn là?</p>
+    <button onclick="saveGender('Nam')">Nam</button>
+    <button onclick="saveGender('Nữ')">Nữ</button>
+  </div>
+
+  <!-- STEP 3: AGE -->
+  <div class="phone-step" id="stepAge">
+    <p>Bạn bao nhiêu tuổi?</p>
+    <input type="number" id="playerAge" placeholder="Tuổi">
+    <button onclick="saveAge()">Xác nhận</button>
+  </div>
+
+</div>
+
+<!-- 🌸 TOAST -->
+<div class="toast" id="toast"></div>
 <!-- 🌸 INTRO -->
 <div class="start-card" id="startCard">
   <h1 class="title">Moka Love</h1>
