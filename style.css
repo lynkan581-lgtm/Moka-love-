@@ -126,3 +126,83 @@
   font-size: 20px;
   color: #ff7abf;
   }
+/* 📱 PHONE ICON */
+.phone-ring {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 64px;
+  animation: phoneShake 0.8s infinite;
+  display: none;
+  z-index: 20;
+}
+
+@keyframes phoneShake {
+  0%,100% { transform: translateX(-50%) rotate(0); }
+  50% { transform: translateX(-50%) rotate(8deg); }
+}
+
+/* 📱 PHONE SCREEN */
+.phone-screen {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 25;
+  animation: phoneIn 0.5s ease;
+}
+
+@keyframes phoneIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.phone-step {
+  display: none;
+  text-align: center;
+}
+
+.phone-step.active {
+  display: block;
+}
+
+.phone-step p {
+  font-size: 22px;
+  color: #ff4f9a;
+  margin-bottom: 16px;
+}
+
+.phone-step input {
+  padding: 12px;
+  border-radius: 20px;
+  border: 2px solid #ff7abf;
+  margin-bottom: 12px;
+}
+
+.phone-step button {
+  padding: 12px 22px;
+  border-radius: 20px;
+  border: none;
+  background: #ffd6ea;
+  color: #ff4f9a;
+  font-size: 16px;
+  margin: 6px;
+}
+
+/* 🌸 TOAST */
+.toast {
+  position: fixed;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffd6ea;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: #ff4f9a;
+  display: none;
+  z-index: 30;
+  }
