@@ -108,3 +108,48 @@ function nextStep(hide, show) {
   document.getElementById(hide).classList.remove('active');
   document.getElementById(show).classList.add('active');
 }
+/* 📦 DỮ LIỆU MẪU (test trước) */
+localStorage.setItem("playerName", "Moka");
+localStorage.setItem("playerAge", "19");
+localStorage.setItem("playerGender", "Nữ");
+
+/* 🧍 LOAD PROFILE */
+const profile = document.getElementById('profile');
+const pName = document.getElementById('pName');
+const pAge = document.getElementById('pAge');
+const pGender = document.getElementById('pGender');
+
+setTimeout(() => {
+  document.getElementById('phone').style.display = 'none';
+
+  pName.innerText = localStorage.getItem("playerName");
+  pAge.innerText = localStorage.getItem("playerAge");
+  pGender.innerText = localStorage.getItem("playerGender");
+
+  profile.classList.add('show');
+}, 2000);
+
+/* 🖼️ AVATAR UPLOAD */
+const avatarInput = document.getElementById('avatarInput');
+const avatarPreview = document.getElementById('avatarPreview');
+
+avatarInput.onchange = () => {
+  const file = avatarInput.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    avatarPreview.src = reader.result;
+    avatarPreview.style.display = 'block';
+    avatarPreview.nextElementSibling.style.display = 'none';
+    localStorage.setItem("avatar", reader.result);
+  };
+  reader.readAsDataURL(file);
+};
+
+/* LOAD AVATAR */
+const savedAvatar = localStorage.getItem("avatar");
+if (savedAvatar) {
+  avatarPreview.src = savedAvatar;
+  avatarPreview.style.display = 'block';
+}
