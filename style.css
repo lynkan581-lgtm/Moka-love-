@@ -206,3 +206,61 @@
   display: none;
   z-index: 30;
   }
+/* 🧍 PROFILE */
+.profile {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 22px;
+  background: rgba(255, 214, 234, 0.85);
+  border: 4px solid #ff4f9a;
+  border-radius: 26px;
+  transform: translate(-50%, -50%) scale(0);
+  text-align: center;
+  z-index: 60;
+  transition: 0.4s ease;
+}
+
+.profile.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* AVATAR */
+.avatar-box {
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  border-radius: 50%;
+  background: white;
+  border: 4px solid #ff4f9a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.avatar-box span {
+  font-size: 42px;
+  color: #ff4f9a;
+}
+
+.avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+/* INFO */
+.profile .info {
+  margin-top: 16px;
+  color: #ff4f9a;
+  font-size: 17px;
+}
+
+.profile p {
+  margin: 6px 0;
+  }
