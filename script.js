@@ -1,6 +1,6 @@
 /* ICON NỀN */
 const space = document.querySelector('.space');
-const icons = ['💗','🌸','✨','💖','🌷','💫','💞'];
+const icons = ['💗','✨','🌸','💖'];
 
 for (let i = 0; i < 25; i++) {
   const span = document.createElement('span');
@@ -11,17 +11,50 @@ for (let i = 0; i < 25; i++) {
   space.appendChild(span);
 }
 
-/* CLICK INTRO */
+/* CHUYỂN SCENE */
 const startCard = document.getElementById('startCard');
+const blink = document.getElementById('blink');
+const scene = document.getElementById('scene');
 
 startCard.addEventListener('click', () => {
-  startCard.style.animation = 'none';
-  startCard.style.transition = 'all 0.6s ease';
-  startCard.style.transform = 'translate(-50%, -50%) scale(0.8)';
-  startCard.style.opacity = '0';
+  startCard.style.display = 'none';
+  space.style.display = 'none';
+
+  blink.style.opacity = 1;
+  setTimeout(() => blink.style.opacity = 0, 200);
+  setTimeout(() => blink.style.opacity = 1, 400);
 
   setTimeout(() => {
-    startCard.style.display = 'none';
-    console.log('START GAME');
-  }, 600);
+    blink.style.opacity = 0;
+    scene.style.display = 'block';
+  }, 650);
 });
+
+/* CHAT GÕ CHỮ */
+const buttons = document.querySelectorAll('.choices button');
+const chatbox = document.getElementById('chatbox');
+const chatText = document.getElementById('chatText');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('.choices').style.display = 'none';
+    chatbox.style.display = 'block';
+    typeText(btn.dataset.text);
+  });
+});
+
+function typeText(text) {
+  chatText.innerText = '';
+  let i = 0;
+
+  const typing = setInterval(() => {
+    chatText.innerText += text[i];
+    i++;
+    if (i >= text.length) {
+      clearInterval(typing);
+      setTimeout(() => {
+        chatbox.style.display = 'none';
+      }, 1200);
+    }
+  }, 60);
+             }
