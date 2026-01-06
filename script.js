@@ -45,27 +45,4 @@ function typeText(text) {
       }, 1200);
     }
   }, 55);
-      }
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelector('.choices').style.display = 'none';
-    chatbox.style.display = 'block';
-    typeText(btn.dataset.text);
-  });
-});
-
-function typeText(text) {
-  chatText.innerText = '';
-  let i = 0;
-
-  const typing = setInterval(() => {
-    chatText.innerText += text[i];
-    i++;
-    if (i >= text.length) {
-      clearInterval(typing);
-      setTimeout(() => {
-        chatbox.style.display = 'none';
-      }, 1200);
-    }
-  }, 60);
              }
