@@ -1,66 +1,39 @@
-/* ICON TRÔI */
-const icons = ['💗','✨','🌸','💖','💫'];
-const iconBox = document.getElementById('icons');
+const intro = document.getElementById('intro');
+const startCard = document.getElementById('startCard');
+const scene = document.getElementById('scene');
+const space = document.getElementById('space');
+const chatText = document.getElementById('chatText');
 
-for (let i = 0; i < 25; i++) {
-  const span = document.createElement('span');
-  span.className = 'icon';
-  span.innerText = icons[Math.floor(Math.random() * icons.length)];
-  span.style.left = Math.random() * 100 + 'vw';
-  span.style.fontSize = 14 + Math.random() * 18 + 'px';
-  span.style.animationDuration = 15 + Math.random() * 20 + 's';
-  iconBox.appendChild(span);
+const icons = ['💗','✨','🌸','💖','💫','🫧','🐰'];
+
+function spawnIcon() {
+  const s = document.createElement('span');
+  s.textContent = icons[Math.floor(Math.random()*icons.length)];
+  s.style.left = Math.random()*100 + 'vw';
+  s.style.animationDuration = 18 + Math.random()*20 + 's';
+  space.appendChild(s);
+  setTimeout(()=>s.remove(),40000);
 }
 
-/* ELEMENTS */
-const intro = document.getElementById('intro');
-const blink = document.getElementById('blink');
-const game = document.getElementById('game');
-const chat = document.getElementById('chat');
-const chatText = document.getElementById('chatText');
-const buttons = document.querySelectorAll('#choices button');
+for(let i=0;i<18;i++) spawnIcon();
+setInterval(spawnIcon, 2000);
 
-/* START */
-intro.onclick = () => {
-  blink.style.opacity = 1;
+startCard.onclick = () => {
+  intro.style.display = 'none';
+  space.remove();
+  document.body.classList.remove('intro-bg');
 
-  setTimeout(() => blink.style.opacity = 0, 300);
-  setTimeout(() => blink.style.opacity = 1, 550);
-  setTimeout(() => blink.style.opacity = 0, 800);
-
-  setTimeout(() => {
-    intro.style.display = 'none';
-    iconBox.remove();
-    game.style.display = 'block';
-  }, 900);
+  setTimeout(()=>{
+    scene.style.display = 'block';
+  },300);
 };
 
-/* CHAT TYPE */
-buttons.forEach(btn => {
-  btn.onclick = () => {
-    chat.style.display = 'block';
-    chatText.textContent = '';
-    let text = btn.dataset.text;
-    let i = 0;
-
-    const typing = setInterval(() => {
-      chatText.textContent += text[i];
-      i++;
-      if (i === text.length) {
-        clearInterval(typing);
-        setTimeout(() => chat.style.display = 'none', 1200);
-      }
-    }, 60);
-  };
-});
-  const typing = setInterval(() => {
-    chatText.innerText += text[i];
+function choose(text) {
+  chatText.textContent = '';
+  let i = 0;
+  const typing = setInterval(()=>{
+    chatText.textContent += text[i];
     i++;
-    if (i >= text.length) {
-      clearInterval(typing);
-      setTimeout(() => {
-        chatbox.style.display = 'none';
-      }, 1200);
+    if(i >= text.length) clearInterval(typing);
+  },60);
     }
-  }, 55);
-             }
