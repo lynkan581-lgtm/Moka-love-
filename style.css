@@ -205,3 +205,65 @@
   object-fit: cover;
   display: none;
     }
+/* 📱 PHONE FLOW */
+const phoneRing = document.getElementById('phoneRing');
+const phoneScreen = document.getElementById('phoneScreen');
+const toast = document.getElementById('toast');
+
+function showToast(text) {
+  toast.innerText = text;
+  toast.style.display = 'block';
+  setTimeout(() => toast.style.display = 'none', 1600);
+}
+
+/* SAU KHI CHAT XONG → PHONE RING */
+function afterChat() {
+  phoneRing.style.display = 'block';
+
+  setTimeout(() => {
+    phoneRing.style.display = 'none';
+    phoneScreen.style.display = 'flex';
+  }, 1800);
+}
+
+/* GHI ĐÈ typeText KẾT THÚC */
+const oldTypeText = typeText;
+typeText = function(text) {
+  oldTypeText(text);
+  setTimeout(afterChat, 1800);
+};
+
+/* SAVE NAME */
+function saveName() {
+  const name = document.getElementById('playerName').value;
+  if (!name) return;
+
+  localStorage.setItem('playerName', name);
+  showToast(`Đã nhập tên "${name}" thành công!`);
+
+  nextStep('stepName', 'stepGender');
+}
+
+/* SAVE GENDER */
+function saveGender(gender) {
+  localStorage.setItem('playerGender', gender);
+  nextStep('stepGender', 'stepAge');
+}
+
+/* SAVE AGE */
+function saveAge() {
+  const age = document.getElementById('playerAge').value;
+  if (!age) return;
+
+  localStorage.setItem('playerAge', age);
+  showToast('Hoàn tất!');
+
+  setTimeout(() => {
+    phoneScreen.style.transform = 'scale(1.2)';
+  }, 500);
+}
+
+function nextStep(hide, show) {
+  document.getElementById(hide).classList.remove('active');
+  document.getElementById(show).classList.add('active');
+  }
