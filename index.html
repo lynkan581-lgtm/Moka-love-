@@ -6,35 +6,37 @@
   <title>Moka Love</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="intro-bg">
+<!-- ICON NỀN -->
+<div id="icons"></div>
 
-<!-- 🌌 ICON NỀN INTRO -->
-<div class="space"></div>
-
-<!-- 💗 INTRO -->
-<div class="start-card" id="startCard">
-  <h1 class="title">Moka Love</h1>
-  <p class="tap">Chạm để bắt đầu</p>
+<!-- INTRO -->
+<div id="intro">
+  <h1>Moka Love</h1>
+  <p>Chạm để bắt đầu</p>
 </div>
 
-<!-- 👁️ CHỚP MẮT -->
-<div class="blink" id="blink"></div>
+<!-- BLINK -->
+<div id="blink"></div>
 
-<!-- 🏠 SCENE TRẦN NHÀ -->
-<div class="scene" id="scene">
-  <img src="file_000000004a9071fa963afb9a45478acb.png" class="ceiling">
+<!-- GAME -->
+<div id="game">
+  <img src="file_000000004a9071fa963afb9a45478acb.png" id="bg">
 
-  <!-- LỰA CHỌN -->
-  <div class="choices">
+  <div id="choices">
     <button data-text="Đây là đâu!?">Đây là đâu!?</button>
     <button data-text="Sao mình lại ở đây!?">Sao mình lại ở đây!?</button>
   </div>
 
-  <!-- CHAT -->
-  <div class="chatbox" id="chatbox">
-    <p id="chatText"></p>
+  <div id="chat">
+    <span id="chatText"></span>
   </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>  </div>
 </div>
 
 <script src="script.js"></script>
