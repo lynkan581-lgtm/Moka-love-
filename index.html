@@ -4,23 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moka Love</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<!-- NỀN VŨ TRỤ -->
+<!-- 🌌 INTRO ICON -->
 <div class="space"></div>
 
-<!-- DEV NOTE -->
-<div class="dev-note">dev: raunoinhieu</div>
-
-<!-- INTRO -->
+<!-- 🎀 INTRO -->
 <div class="start-card" id="startCard">
   <h1 class="title">Moka Love</h1>
   <div class="heart">💗</div>
   <p class="tap">Chạm để bắt đầu</p>
 </div>
 
-<script src="script.js"></script>
+<!-- 👁️ HIỆU ỨNG CHỚP MẮT -->
+<div class="blink" id="blink"></div>
+
+<!-- 🏠 SCENE TỈNH DẬY -->
+<div class="scene" id="scene">
+  <img 
+    src="./file_000000004a9071fa963afb9a45478acb.png" 
+    class="ceiling"
+  >
+
+  <div class="choices">
+    <button data-text="Đây là đâu!?">Đây là đâu!?</button>
+    <button data-text="Sao mình lại ở đây!?">Sao mình lại ở đây!?</button>
+  </div>
+
+  <div class="chatbox" id="chatbox">
+    <p id="chatText"></p>
+  </div>
+</div>
+
+<script src="./script.js"></script>
 </body>
   </html>
