@@ -1,8 +1,8 @@
-/* ===== INTRO ===== */
 const startCard = document.getElementById('startCard');
 const blink = document.getElementById('blink');
 const scene = document.getElementById('scene');
 
+/* INTRO → SCENE */
 startCard.onclick = () => {
   startCard.style.display = 'none';
 
@@ -17,7 +17,7 @@ startCard.onclick = () => {
   }, 650);
 };
 
-/* ===== CHOICE + CHAT ===== */
+/* CHAT + CHOICE */
 const buttons = document.querySelectorAll('.choices button');
 const chatbox = document.getElementById('chatbox');
 const chatText = document.getElementById('chatText');
@@ -35,6 +35,17 @@ function typeText(text) {
   chatText.innerText = '';
   let i = 0;
 
+  const typing = setInterval(() => {
+    chatText.innerText += text[i];
+    i++;
+    if (i >= text.length) {
+      clearInterval(typing);
+      setTimeout(() => {
+        chatbox.style.display = 'none';
+      }, 1200);
+    }
+  }, 55);
+      }
   const typing = setInterval(() => {
     chatText.innerText += text[i];
     i++;
