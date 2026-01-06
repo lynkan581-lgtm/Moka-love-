@@ -4,86 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moka Love</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-  <!-- 📱 PHONE RING -->
-<div class="phone-ring" id="phoneRing">📱</div>
-
-<!-- 📱 PHONE SCREEN -->
-<div class="phone-screen" id="phoneScreen">
-
-  <!-- STEP 1: NAME -->
-  <div class="phone-step active" id="stepName">
-    <p>Nhập tên của bạn</p>
-    <input type="text" id="playerName" placeholder="Tên của bạn...">
-    <button onclick="saveName()">Xác nhận</button>
-  </div>
-
-  <!-- STEP 2: GENDER -->
-  <div class="phone-step" id="stepGender">
-    <p>Bạn là?</p>
-    <button onclick="saveGender('Nam')">Nam</button>
-    <button onclick="saveGender('Nữ')">Nữ</button>
-  </div>
-
-  <!-- STEP 3: AGE -->
-  <div class="phone-step" id="stepAge">
-    <p>Bạn bao nhiêu tuổi?</p>
-    <input type="number" id="playerAge" placeholder="Tuổi">
-    <button onclick="saveAge()">Xác nhận</button>
-  </div>
-
-</div>
-<!-- 🧍 PROFILE -->
-<div class="profile" id="profile">
-  <label class="avatar-box">
-    <input type="file" id="avatarInput" accept="image/*" hidden>
-    <img id="avatarPreview" src="" alt="">
-    <span>+</span>
-  </label>
-
-  <div class="info">
-    <p><b>Tên:</b> <span id="pName"></span></p>
-    <p><b>Tuổi:</b> <span id="pAge"></span></p>
-    <p><b>Giới tính:</b> <span id="pGender"></span></p>
-  </div>
-    </div>
-<!-- 🌸 TOAST -->
-<div class="toast" id="toast"></div>
 <body class="intro-bg">
 
-<!-- 🌸 INTRO -->
+<!-- INTRO -->
 <div class="start-card" id="startCard">
   <h1 class="title">Moka Love</h1>
   <div class="heart">💗</div>
   <p class="tap">Chạm để bắt đầu</p>
 </div>
 
-<!-- 👁️ BLINK -->
 <div class="blink" id="blink"></div>
 
-<!-- 🏠 SCENE -->
+<!-- SCENE -->
 <div class="scene" id="scene">
-  <img src="./file_000000004a9071fa963afb9a45478acb.png" class="ceiling">
+  <img src="file_000000004a9071fa963afb9a45478acb.png" class="ceiling">
 
-  <!-- CHOICES -->
-  <div class="choices" id="choices">
-    <button data-text="Đây là đâu!?">Đây là đâu!?</button>
-    <button data-text="Sao mình lại ở đây!?">Sao mình lại ở đây!?</button>
-  </div>
-
-  <!-- CHAT -->
-  <div class="chatbox" id="chatbox">
-    <p id="chatText"></p>
+  <!-- PHONE -->
+  <div class="phone" id="phone">
+    <p class="phone-text">Bạn bao nhiêu tuổi?</p>
+    <input type="number" id="ageInput" placeholder="Nhập tuổi">
+    <button onclick="submitAge()">Xác nhận</button>
   </div>
 </div>
 
-<script src="./script.js"></script>
-</body>
-  </html>    <span id="chatText"></span>
-  </div>
+<!-- PROFILE -->
+<div class="profile" id="profile">
+  <label class="avatar-box">
+    <input type="file" id="avatarInput" hidden>
+    <img id="avatarPreview">
+    <span>+</span>
+  </label>
+
+  <p>Tên: <span id="pName"></span></p>
+  <p>Tuổi: <span id="pAge"></span></p>
+  <p>Giới tính: <span id="pGender"></span></p>
 </div>
 
 <script src="script.js"></script>
 </body>
-  </html>
+      </html>
