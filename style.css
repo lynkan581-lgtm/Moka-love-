@@ -2,39 +2,101 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial Rounded MT Bold', 'Comic Sans MS', sans-serif;
 }
 
 body {
+  background: white;
   height: 100vh;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  font-family: 'Baloo 2', cursive;
 }
 
-/* ================= TIM ÁNH SÁNG SAU NỀN ================= */
-.glow-heart {
+/* 🌌 NỀN ICON BAY */
+.space span {
   position: absolute;
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, rgba(255,120,180,0.35), transparent 65%);
-  filter: blur(10px);
-  animation: glowPulse 3s infinite ease-in-out;
-  z-index: 0;
+  font-size: 20px;
+  opacity: 0.4;
+  animation: float linear infinite;
 }
 
-@keyframes glowPulse {
-  0%,100% { transform: scale(0.95); opacity: 0.6; }
-  50% { transform: scale(1.05); opacity: 1; }
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
 }
 
-/* ================= BẢNG INTRO ================= */
-.intro-box {
-  width: 90%;
-  max-width: 420px;
-  background: #ffffff;
+/* 🩷 BẢNG START */
+.start-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffd6ea;
+  width: 280px;
+  padding: 40px 20px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(255,120,180,0.35);
+  animation: cardFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%,100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-10px); }
+}
+
+/* TITLE */
+.title {
+  font-size: 36px;
+  color: #ff4f9a;
+  text-shadow: 0 4px 0 #ffc1dc;
+}
+
+/* TIM */
+.heart {
+  font-size: 32px;
+  margin: 15px 0;
+  animation: heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* TAP */
+.tap {
+  color: #ff6fb1;
+  font-size: 18px;
+  animation: tapBlink 1s infinite;
+}
+
+@keyframes tapBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* 📝 DEV NOTE */
+.dev-note {
+  position: absolute;
+  top: 80px;
+  left: -200px;
+  background: #ffe3f1;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #ff5fa2;
+  animation: slideIn 1.5s ease forwards, noteFloat 3s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  to { left: 20px; }
+}
+
+@keyframes noteFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  }  background: #ffffff;
   border-radius: 34px;
   padding: 70px 20px 80px;
   text-align: center;
