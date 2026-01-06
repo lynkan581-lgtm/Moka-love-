@@ -2,39 +2,141 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  background: white;
-  height: 100vh;
-  overflow: hidden;
   font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
 }
 
-/* 🌌 NỀN ICON TRÔI */
+body {
+  background: black;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 🌌 ICON NỀN */
 .space {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   z-index: 1;
 }
 
 .space span {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.4;
   animation: float linear infinite;
 }
 
 @keyframes float {
-  from {
-    transform: translateY(110vh) translateX(0);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-20vh) translateX(40px);
+  from { transform: translateY(110vh); }
+  to { transform: translateY(-20vh); }
+}
+
+/* 🎀 INTRO */
+.start-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffd6ea;
+  padding: 40px 20px;
+  width: 280px;
+  border-radius: 40px;
+  text-align: center;
+  z-index: 5;
+  animation: cardFloat 2.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes cardFloat {
+  50% { transform: translate(-50%, -55%); }
+}
+
+.title {
+  font-size: 36px;
+  color: #ff4f9a;
+}
+
+.heart {
+  font-size: 32px;
+  margin: 14px 0;
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.3); }
+}
+
+.tap {
+  color: #ff6fb1;
+  animation: tapBlink 1s infinite;
+}
+
+@keyframes tapBlink {
+  50% { opacity: 0.4; }
+}
+
+/* 👁️ CHỚP MẮT */
+.blink {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* 🏠 SCENE */
+.scene {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2;
+}
+
+.ceiling {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: shock 0.4s ease;
+}
+
+@keyframes shock {
+  0% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* 🔘 LỰA CHỌN */
+.choices {
+  position: absolute;
+  bottom: 140px;
+  width: 100%;
+  text-align: center;
+}
+
+.choices button {
+  background: #ffd6ea;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 22px;
+  margin: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 💬 CHAT BOX */
+.chatbox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255,214,234,0.95);
+  padding: 20px;
+  display: none;
+}
+
+#chatText {
+  font-size: 18px;
+  color: #ff4f9a;
+  }    transform: translateY(-20vh) translateX(40px);
     opacity: 0.6;
   }
 }
