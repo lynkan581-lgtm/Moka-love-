@@ -2,39 +2,130 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
 }
 
-body {
+/* 🌸 INTRO NỀN TRẮNG */
+.intro-bg {
+  background: white;
   height: 100vh;
   overflow: hidden;
 }
 
-/* INTRO */
-.intro-bg { background: white; }
-
+/* 🎀 INTRO CARD */
 .start-card {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: #ffd6ea;
-  padding: 40px;
+  width: 280px;
+  padding: 40px 20px;
   border-radius: 40px;
   text-align: center;
+  animation: floatCard 2.5s ease-in-out infinite;
+  cursor: pointer;
+  z-index: 5;
+}
+
+@keyframes floatCard {
+  50% { transform: translate(-50%, -55%); }
+}
+
+.title {
+  font-size: 38px;
+  color: #ff4f9a;
+  text-shadow: 0 4px 0 #ffc1dc;
+}
+
+.heart {
+  font-size: 32px;
+  margin: 14px 0;
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.3); }
+}
+
+.tap {
+  color: #ff6fb1;
+  animation: tapBlink 1s infinite;
+}
+
+@keyframes tapBlink {
+  50% { opacity: 0.4; }
+}
+
+/* 👁️ BLINK */
+.blink {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* 🏠 SCENE */
+.scene {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: black;
+}
+
+.ceiling {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: shock 0.4s ease;
+}
+
+@keyframes shock {
+  0% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* 🔘 CHOICES – NOVEL STYLE */
+.choices {
+  position: absolute;
+  bottom: 190px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.choices button {
+  width: 80%;
+  background: rgba(255, 214, 234, 0.75);
+  border: 3px solid #ff4f9a;
+  border-radius: 28px;
+  padding: 16px;
+  font-size: 18px;
+  color: #ff4f9a;
   cursor: pointer;
 }
 
-.title { color: #ff4f9a; font-size: 36px; }
+/* 💬 CHAT BOX – VISUAL NOVEL */
+.chatbox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: rgba(0,0,0,0.6);
+  border-top: 4px solid #ff4f9a;
+  padding: 18px;
+  display: none;
+}
 
-.heart { font-size: 30px; animation: beat 1s infinite; }
-
-@keyframes beat { 50% { transform: scale(1.3); } }
-
-.tap { color: #ff6fb1; }
-
-/* BLINK */
-.blink {
-  position: fixed;
+#chatText {
+  font-size: 20px;
+  color: #ff7abf;
+  }  position: fixed;
   inset: 0;
   background: black;
   opacity: 0;
