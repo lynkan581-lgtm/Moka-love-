@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", cursive;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(#ffd6e8, #fff0f6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ================= STICKY NOTE ================= */
+.sticky-note {
+  position: absolute;
+  top: 18%;
+  left: -220px;
+  background: #fff4a8;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #6b5b00;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: rotate(-4deg);
+  animation: slideInNote 1.5s ease forwards,
+             wiggleNote 3s ease-in-out infinite;
+  animation-delay: 0.5s, 2s;
+}
+
+/* băng keo */
+.sticky-note::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 30%;
+  width: 60px;
+  height: 18px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 4px;
+  transform: rotate(-3deg);
+}
+
+/* ================= BẢNG TRẮNG ================= */
+.intro-box {
+  width: 88%;
+  max-width: 420px;
+  background: white;
+  border-radius: 26px;
+  padding: 55px 20px 75px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  animation: bounce 2.6s infinite ease-in-out;
+}
+
+.intro-box h1 {
+  font-size: 44px;
+  color: #ff5fa2;
+  margin-bottom: 12px;
+}
+
+.intro-box p {
+  font-size: 18px;
+  color: #ff8fbe;
+}
+
+/* viền phấn */
+.powder {
+  position: absolute;
+  bottom: -18px;
+  left: 8%;
+  width: 84%;
+  height: 22px;
+  background: linear-gradient(to bottom, #ffc1dc, #ff6fae);
+  border-radius: 0 0 26px 26px;
+  filter: blur(2px);
+}
+
+/* ================= ICON ================= */
+.icon {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0;
+}
+
+.heart {
+  left: 22%;
+  bottom: 25px;
+  animation: floatUp 3s infinite;
+}
+
+.heart.delay {
+  left: 68%;
+  animation-delay: 1.3s;
+}
+
+.bunny {
+  right: 45%;
+  bottom: 20px;
+  font-size: 26px;
+  animation: bunnyJump 3s infinite;
+}
+
+.sparkle {
+  right: 18%;
+  top: 18%;
+  animation: sparkle 2.5s infinite;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.7); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(-90px) scale(1.2); opacity: 0; }
+}
+
+@keyframes bunnyJump {
+  0% { opacity: 0; transform: translateY(0); }
+  20% { opacity: 1; }
+  50% { transform: translateY(-45px); }
+  100% { opacity: 0; transform: translateY(-80px); }
+}
+
+@keyframes sparkle {
+  0%,100% { opacity: 0; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* sticky note animation */
+@keyframes slideInNote {
+  to { left: 6%; }
+}
+
+@keyframes wiggleNote {
+  0%,100% { transform: rotate(-4deg); }
+  50% { transform: rotate(2deg); }
+  }
